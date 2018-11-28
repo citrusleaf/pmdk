@@ -73,3 +73,6 @@ bash ./travisci_build_coverity_scan.sh
 
 echo /pmdk/cov-int/build-log.txt:
 cat /pmdk/cov-int/build-log.txt
+
+echo /pmdk/cov-int/scm_log.txt:
+cat /pmdk/cov-int/scm_log.txt
