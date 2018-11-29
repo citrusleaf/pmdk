@@ -69,6 +69,7 @@ cd $WORKDIR
 
 wget https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh
 patch < utils/docker/0001-travis-fix-travisci_build_coverity_scan.sh.patch
+perl -pi -e 's/set -e/set -ex/' travisci_build_coverity_scan.sh
 bash ./travisci_build_coverity_scan.sh
 
 echo /pmdk/cov-int/build-log.txt:
