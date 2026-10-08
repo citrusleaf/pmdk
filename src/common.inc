@@ -88,6 +88,9 @@ get_arch = $(shell $(CC) -dumpmachine | awk -F'[/-]' '{print $$1}')
 ifeq ($(ARCH),)
 export ARCH := $(call get_arch)
 endif
+ifneq ($(filter $(ARCH), powerpc64 powerpc64le ppc64 ppc64le ppc64el),)
+override ARCH := ppc64
+endif
 
 ifeq ($(PKG_CONFIG_CHECKED),)
 ifeq ($(shell command -v $(PKG_CONFIG) && echo y || echo n), n)
